@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <title>Patients</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+    <link rel="shortcut icon" type="image/x-icon" href="/images/favicon.ico" />
+    <link rel="stylesheet" href="plugins/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="plugins/icofont/icofont.min.css">
+    <link rel="stylesheet" href="plugins/slick-carousel/slick/slick.css">
+    <link rel="stylesheet" href="plugins/slick-carousel/slick/slick-theme.css">
+    <link rel="stylesheet" href="css/style.css">
+    <script src="plugins/jquery/jquery.js"></script>
+    <script src="plugins/bootstrap/js/popper.js"></script>
+    <script src="plugins/bootstrap/js/bootstrap.min.js"></script>
+    <script src="plugins/counterup/jquery.easing.js"></script>
+    <script src="plugins/slick-carousel/slick/slick.min.js"></script>
+    <script src="plugins/counterup/jquery.waypoints.min.js"></script>
+    <script src="plugins/shuffle/shuffle.min.js"></script>
+    <script src="plugins/counterup/jquery.counterup.min.js"></script>
+    <script type="text/javascript" src="/js/patientGet.js"></script>
+    <script type="text/javascript" src="/js/patientUpdate.js"></script>
+    <script type="text/javascript" src="/js/patientDelete.js"></script>
+</head>
+<body>
+
+<header>
+    <div class="header-top-bar">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-6">
+                    <ul class="top-bar-info list-inline-item pl-0 mb-0">
+                        <li class="list-inline-item"><a href="mailto:federicofpaz@gmail.com"><i
+                                class="icofont-support-faq mr-2"></i>support@dentalClinic.com</a></li>
+                        <li class="list-inline-item"><i class="icofont-location-pin mr-2"></i>Calle Falsa 123,
+                            Springfield, Oregon </li>
+                    </ul>
+                </div>
+                <div class="col-lg-6">
+                    <div class="text-lg-right top-right-bar mt-2 mt-lg-0">
+                        <a>
+                            <span>Call Now : </span>
+                            <span class="h4">0-800-DENTAL-CLINIC</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <nav class="navbar navbar-expand-lg navigation" id="navbar">
+        <div class="container">
+            <a class="navbar-brand" href="/index.html">
+                <img src="images/logo.png" alt="" class="img-fluid">
+            </a>
+
+            <button class="navbar-toggler collapsed" type="button" data-toggle="collapse" data-target="#navbarmain"
+                    aria-controls="navbarmain" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="icofont-navigation-menu"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarmain">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item active">
+                        <a class="nav-link" href="/index.html">Home</a>
+                    </li>
+                    <li class="nav-item"><a class="nav-link" href="#">About Us</a></li>
+
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="/patient.html" id="dropdown02"
+                           data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Patients <i
+                                class="icofont-thin-down"></i></a>
+                        <ul class="dropdown-menu" aria-labelledby="dropdown02">
+                            <li><a class="dropdown-item" href="/patientRegister.html">Register Patient</a></li>
+                            <li><a class="dropdown-item" href="/patient.html">Search Patient</a></li>
+                        </ul>
+                    </li>
+
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="/dentist.html" id="dropdown03"
+                           data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Dentists <i
+                                class="icofont-thin-down"></i></a>
+                        <ul class="dropdown-menu" aria-labelledby="dropdown03">
+                            <li><a class="dropdown-item" href="/dentistRegister.html">Register Dentist</a></li>
+                            <li><a class="dropdown-item" href="/dentist.html">Search Dentist</a></li>
+                        </ul>
+                    </li>
+
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="/appointment.html" id="dropdown05"
+                           data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Appointments <i
+                                class="icofont-thin-down"></i></a>
+                        <ul class="dropdown-menu" aria-labelledby="dropdown05">
+                            <li><a class="dropdown-item" href="/appointmentRegister.html">Create Appointment</a></li>
+
+                            <li><a class="dropdown-item" href="/appointment.html">Search Appointment</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+</header>
+
+<div class="container" >
+    <div id="div_patient_table">
+        <h2 class="mb-2 title-color">Search Patients</h2>
+        <div class="row col-md-6 table-responsive" id="container">
+            <table id="patientTable" class="table table-striped">
+                <thead>
+                <tr id="table">
+                    <th>Id</th>
+                    <th>Name</th>
+                    <th>Surname</th>
+                    <th>D.N.I.</th>
+                    <th>Discharge</th>
+                    <th>Street</th>
+                    <th>Number</th>
+                    <th>City</th>
+                    <th>Province</th>
+                    <th></th>
+                </tr>
+                </thead>
+                <tbody>
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-sm-6" style="display: none;
+											background-color:#e6fffa; padding:10px; border-radius:3px"
+             id="div_patient_updating">
+            <form id="update_patient_form">
+                <div class="form-group">
+                    <input type="text" class="form-control" id="patient_id" readonly>
+                </div>
+                <div class="form-group">
+                    <input type="text" class="form-control" placeholder="Name" id="name">
+                </div>
+                <div class="form-group">
+                    <input type="text" class="form-control" placeholder="Surname" id="surname">
+                </div>
+                <div class="form-group">
+                    <input type="text" class="form-control" placeholder="D.N.I." id="dni">
+                </div>
+                <div class="form-group">
+                    <input type="text" class="form-control" placeholder="Discharge" id="initDate">
+                </div>
+                <div class="form-group">
+                    <input type="text" class="form-control" placeholder="Street" id="street">
+                </div>
+                <div class="form-group">
+                    <input type="text" class="form-control" placeholder="Number" id="number">
+                </div>
+                <div class="form-group">
+                    <input type="text" class="form-control" placeholder="City" id="city">
+                </div>
+                <div class="form-group">
+                    <input type="text" class="form-control" placeholder="Province" id="province">
+                </div>
+                <button type="submit" class="btn btn-main btn-round-full">Update<i
+                        class="icofont-simple-right ml-2"></i></button>
+            </form>
+            <div id="response" style="display:none; margin:10px">
+            </div>
+        </div>
+    </div>
+    <hr>
+</div>
+
+<!-- footer Start -->
+<footer class="footer section gray-bg">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-4 mr-auto col-sm-6">
+                <div class="widget mb-5 mb-lg-0">
+                    <div class="logo mb-4">
+                        <img src="images/logo.png" alt="" class="img-fluid">
+                    </div>
+                    <p>Project carried out as an integrator of the Back End subject using the JAVA language.</p>
+
+                    <ul class="list-inline footer-socials mt-4">
+                        <li class="list-inline-item"><a href="https://github.com/fedefpaz"><i
+                                class="icofont-github"></i></a></li>
+                        <li class="list-inline-item"><a href="https://www.linkedin.com/in/federico-paz/"><i
+                                class="icofont-linkedin"></i></a></li>
+                        <li class="list-inline-item"><a href="mailto:federicofpaz@gmail.com"><i
+                                class="icofont-email"></i></a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="col-lg-2 col-md-6 col-sm-6">
+                <div class="widget mb-5 mb-lg-0">
+                    <h4 class="text-capitalize mb-3">Support</h4>
+                    <div class="divider mb-4"></div>
+
+                    <ul class="list-unstyled footer-menu lh-35">
+                        <li><a href="#">Terms & Conditions</a></li>
+                        <li><a href="#">Privacy Policy</a></li>
+                        <li><a href="#">Company Support </a></li>
+                        <li><a href="#">FAQuestions</a></li>
+                        <li><a href="#">Company Licence</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="col-lg-3 col-md-6 col-sm-6">
+                <div class="widget widget-contact mb-5 mb-lg-0">
+                    <h4 class="text-capitalize mb-3">Get in Touch</h4>
+                    <div class="divider mb-4"></div>
+
+                    <div class="footer-contact-block mb-4">
+                        <div class="icon d-flex align-items-center">
+                            <i class="icofont-email mr-3"></i>
+                            <span class="h6 mb-0">Support Available for 24/7</span>
+                        </div>
+                        <h4 class="mt-2"><a>support@dentalClinic.com</a></h4>
+                    </div>
+
+                    <div class="footer-contact-block">
+                        <div class="icon d-flex align-items-center">
+                            <i class="icofont-support mr-3"></i>
+                            <span class="h6 mb-0">Mon to Fri : 08:30 - 18:00</span>
+                        </div>
+                        <h4 class="mt-2"><a>0-800-DENTAL-CLINIC</a></h4>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="footer-btm py-4 mt-5">
+            <div class="row align-items-center justify-content-between">
+                <div class="col-lg-6">
+                    <div class="copyright">
+                        &copy; Copyright Reserved to <span class="text-color">Federico Paz</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-lg-4">
+                    <a class="backtop js-scroll-trigger" href="#top">
+                        <i class="icofont-long-arrow-up"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>
+
+</body>
+</html>
